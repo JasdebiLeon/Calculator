@@ -4,9 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <style>
+        div {
+            display: flex;
+        }
+        button {
+            flex: 1;
+            border: 5px solid pink;
+        }
+        .buttons {
+            flex: 1;
+            background-color: blue;
+            color: antiquewhite;
+        }
+        .showNums {
+            flex: 1;
+            margin: 15px;
+            border: 5px solid green;
+        }
+
+        .buttons2 {
+            flex: 1;
+            background-color: brown;
+        }
+        
+        .result {
+            border: 5px magenta solid;
+        }
+    </style>
 </head>
 <body>
     <div><h1>Odin Calculator</h1></div>
-    
+    <div class="buttons">
+        <button class="add">Add number</button>
+        <button class="calculate">Calculate</button>
+        <button class="clear">Clear</button>        
+    </div>
+    <div><h2>Operations</h2></div>
+    <div class="buttons2">
+        <button class="plus">+ Add</button>
+        <button class="minus">- Subtract</button>
+        <button class="multiply">* Multiply</button>
+        <button class="divide">/ Divide</button>
+    </div>
+    <div><h2>Queue</h2></div>
+    <div class="showNums"></div>
+    <div class="result">No results yet.</div>
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function() {
+            const queue = document.querySelector('.showNums');
+            const result = document.querySelector('.result');
+            
+
+            const clearButton = document.querySelector('.clear');
+            clearButton.addEventListener("click", function() {
+                clear();
+            });
+            function clear() {
+                result.textContent = ' ';
+            }
+
+            const addButton = document.querySelector('.add');
+            addButton.addEventListener("click", function() {
+                const addNumber = parseInt(prompt("Add a number: "));
+                queue.textContent += addNumber;
+            })
+
+            
+            
+
+
+        });
+    </script>
 </body>
 </html>

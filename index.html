@@ -71,7 +71,29 @@
                 queue.textContent += addNumber;
             })
 
-            
+            const plusButton = document.querySelector('.plus');
+            plusButton.addEventListener("click", function() {
+                queue.textContent += ' +';
+            });
+
+            const minusButton = document.querySelector('.minus');
+            minusButton.addEventListener("click", function() {
+                queue.textContent += ' -';
+            });
+
+            const multiplyButton = document.querySelector('.multiply');
+            multiplyButton.addEventListener("click", function() {
+                queue.textContent += ' *';
+            });
+
+            const divideButton = document.querySelector('.divide');
+            divideButton.addEventListener("click", function() {
+                queue.textContent += ' /';
+            });
+
+
+
+
             
 
 

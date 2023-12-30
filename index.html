@@ -55,14 +55,24 @@
         document.addEventListener("DOMContentLoaded", function() {
             const queue = document.querySelector('.showNums');
             const result = document.querySelector('.result');
-            
+
+            const calculateButton = document.querySelector('.calculate');
+            calculateButton.addEventListener("click", function() {
+                calculate();
+            });
+            function calculate() {
+                const expression = queue.textContent;
+                const resultValue = eval(expression);
+                result.textContent = resultValue;
+            }
 
             const clearButton = document.querySelector('.clear');
             clearButton.addEventListener("click", function() {
                 clear();
             });
             function clear() {
-                result.textContent = ' ';
+                result.textContent = 'No results yet.';
+                queue.textContent= '';
             }
 
             const addButton = document.querySelector('.add');
@@ -90,13 +100,6 @@
             divideButton.addEventListener("click", function() {
                 queue.textContent += ' /';
             });
-
-
-
-
-            
-
-
         });
     </script>
 </body>
